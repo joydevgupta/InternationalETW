@@ -1,26 +1,22 @@
 import React from "react";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
 
 const Header: React.FC = () => {
   return (
-    <header>
-      <h1>Welcome to Your Online English Tutor</h1>
-      <nav>
-        <ul>
-          <li>
-            <a href="#about">About</a>
-          </li>
-          <li>
-            <a href="#services">Services</a>
-          </li>
-          <li>
-            <a href="#testimonials">Testimonials</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <AppBar position="static">
+      <Toolbar>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          EDUFINITE - Online English Tutor
+        </Typography>
+        <Button color="inherit">About</Button>
+        <Button color="inherit">Services</Button>
+        <Button color="inherit">Testimonials</Button>
+        <Button color="inherit">Contact</Button>
+      </Toolbar>
+    </AppBar>
   );
 };
 
