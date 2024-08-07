@@ -4,6 +4,14 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 
+// Function to handle smooth scroll to a specific section
+const handleScroll = (sectionId: string) => {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
 const Header: React.FC = () => {
   return (
     <AppBar position="static">
@@ -11,10 +19,18 @@ const Header: React.FC = () => {
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           EDUFINITE - Online English Tutor
         </Typography>
-        <Button color="inherit">About</Button>
-        <Button color="inherit">Services</Button>
-        <Button color="inherit">Testimonials</Button>
-        <Button color="inherit">Contact</Button>
+        <Button color="inherit" onClick={() => handleScroll("about")}>
+          About
+        </Button>
+        <Button color="inherit" onClick={() => handleScroll("services")}>
+          Services
+        </Button>
+        <Button color="inherit" onClick={() => handleScroll("testimonials")}>
+          Testimonials
+        </Button>
+        <Button color="inherit" onClick={() => handleScroll("contact")}>
+          Contact
+        </Button>
       </Toolbar>
     </AppBar>
   );
