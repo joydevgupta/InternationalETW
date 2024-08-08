@@ -1,8 +1,20 @@
+// src/components/About.tsx
+
 import React from "react";
+import { useInView } from "react-intersection-observer";
 
 const About: React.FC = () => {
+  const { ref, inView } = useInView({
+    threshold: 0.1, // Trigger animation when 10% of the element is visible
+    triggerOnce: true, // Only trigger once
+  });
+
   return (
-    <section id="about">
+    <section
+      id="about"
+      ref={ref}
+      className={`animate-section ${inView ? "in-view" : ""}`}
+    >
       <h2>About Me</h2>
       <img
         src="/path/to/profile-picture.jpg"
