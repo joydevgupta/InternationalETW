@@ -1,8 +1,20 @@
+// src/components/Testimonials.tsx
+
 import React from "react";
+import { useInView } from "react-intersection-observer";
 
 const Testimonials: React.FC = () => {
+  const { ref, inView } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
   return (
-    <section id="testimonials">
+    <section
+      id="testimonials"
+      ref={ref}
+      className={`animate-section ${inView ? "in-view" : ""}`}
+    >
       <h2>Testimonials</h2>
       <blockquote>
         <p>
