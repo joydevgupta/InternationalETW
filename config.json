@@ -1,0 +1,24 @@
+[1mdiff --git a/tsconfig.json b/tsconfig.json[m
+[1mindex d72a7f1..8d06144 100644[m
+[1m--- a/tsconfig.json[m
+[1m+++ b/tsconfig.json[m
+[36m@@ -18,7 +18,18 @@[m
+     "noFallthroughCasesInSwitch": true,[m
+     "allowSyntheticDefaultImports": true[m
+   },[m
+[31m-  "include": ["src", "vite.config.ts"],[m
+[32m+[m[32m  "include": [[m
+[32m+[m[32m    "src/**/*",         // Includes all files in 'src' and its subdirectories[m
+[32m+[m[32m    "vite.config.ts"    // Includes the Vite configuration[m
+[32m+[m[32m  ],[m
+[32m+[m[32m  "exclude": [[m
+[32m+[m[32m    "node_modules",     // Exclude 'node_modules' directory[m
+[32m+[m[32m    "dist",             // Exclude 'dist' directory to avoid compiled files[m
+[32m+[m[32m    ".tmp",             // Exclude temporary files if there are any[m
+[32m+[m[32m    "tests",            // Optional: if you have a test directory, you can exclude it here[m
+[32m+[m[32m    "**/*.test.ts",     // Exclude test files if needed[m
+[32m+[m[32m    "**/*.spec.ts"      // Optional: Exclude test files if you follow a specific naming convention for test files[m
+[32m+[m[32m  ],[m
+   "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.tsbuildinfo",[m
+   "composite": true[m
+ }[m
